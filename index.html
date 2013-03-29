@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Sistema Simple de Notas - por Karmac (2.0)</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+
+		<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" media="all">
+		<link rel="stylesheet" type="text/css" href="css/style.css" media="all">
+	</head>
+	<body>
+		<div class="alert loading">Cargando…</div>
+		<div class="wrapper">
+			<section id="note-list"></section>
+			<hr>
+			<a id="add-note">Añadir Nota</a>
+		</div>
+
+		<script id="actions-default-template" type="text/x-jquery-tmpl">
+			<a id="edit-note" title="Editar la nota."></a>
+			<a id="delete-note" title="Eliminar la nota."></a>
+			<span id="sort-handle" title="Mueve la nota para ordenarla."></span>
+		</script>
+		<script id="actions-active-template" type="text/x-jquery-tmpl">
+			<a id="save-changes" title="Confirmar la acción."></a>
+			<a id="discard-changes" title="Volver atrás."></a>
+		</script>
+		<script id="note-template" type="text/x-jquery-tmpl">
+			<div class="note" id="note-${id}" data-note-id="${id}">
+				<div class="note-wrapper">
+					<div class="note-text">{{html text}}</div>
+					<div class="note-date">${date}</div>
+					<div class="clear"></div>
+				</div>
+				<div class="note-actions">{{tmpl '#actions-default-template'}}</div>
+				<div class="clear"></div>
+			</div>
+		</script>
+
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/jquery-ui.js"></script>
+		<script type="text/javascript" src="js/jquery.tmpl.js"></script>
+		<script type="text/javascript" src="js/script.js"></script>
+	</body>
+</html>
